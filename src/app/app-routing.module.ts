@@ -3,12 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -20,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/reset-pass/reset-pass.module').then( m => m.ResetPassPageModule)
   },
   {
-    path: 'home',
+    path: 'home', // Si quieres mantener esta ruta dentro de 'pages/home', puedes hacerlo, pero ya no hace falta la carpeta 'home'
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
 ];
