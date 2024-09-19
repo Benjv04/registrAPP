@@ -1,0 +1,34 @@
+ion-header{
+    position: absolute;
+}
+
+ion-toolbar{
+    --opacity: 0;
+    --background:transparent;
+}
+
+ion-content {
+    position: relative; 
+    height: 100%;
+    width: 100%;
+  }
+  
+  ion-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    display: block;
+  }
+  
+.login {
+  position: absolute;
+  top: 40%; /* Coloca el recuadro a la mitad de la pantalla */ 
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para centrar tanto vertical como horizontalmente */
+  background-color: white; /* Fondo blanco del recuadro */
+  padding: 60px; /* Espacio interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 400px;
+  width: 70%;
+}
