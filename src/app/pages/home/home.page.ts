@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
   ngOnInit() {}
 
   generarQR() {
-    this.texto ='qr';
+    this.texto ='Bienvenido a RegistrAPP';
     console.log('QR generado:', this.texto);
   }
 }
