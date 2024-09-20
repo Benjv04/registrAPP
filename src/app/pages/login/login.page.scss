@@ -1,34 +1,65 @@
-ion-header{
-    position: absolute;
+ion-header {
+  position: absolute;
 }
 
-ion-toolbar{
-    --opacity: 0;
-    --background:transparent;
+ion-toolbar {
+  --opacity: 0;
+  --background: transparent;
 }
 
 ion-content {
-    position: relative; 
-    height: 100%;
-    width: 100%;
-  }
-  
-  ion-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover; 
-    display: block;
-  }
-  
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+ion-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .login {
   position: absolute;
-  top: 40%; /* Coloca el recuadro a la mitad de la pantalla */ 
-  left: 50%; /* Centra horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta para centrar tanto vertical como horizontalmente */
-  background-color: white; /* Fondo blanco del recuadro */
-  padding: 60px; /* Espacio interno */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
   max-width: 400px;
-  width: 70%;
+  width: 80%;
+  padding: 30px; 
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(1, 87, 131);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 25px;
+}
+
+.titulo {
+  text-align: center;
+  color: white;
+  margin: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+ion-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  --padding-start: 15px;
+  border-radius: 10px;
+  height: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  --placeholder-color: rgba(255,255,255,0.7);
+}
+
+ion-button {
+  width: 30%; /* El botón toma el ancho completo del contenedor */
+  --background: rgb(0, 0, 0,0.1);
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
 }
