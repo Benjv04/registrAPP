@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  texto: string = ''; 
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  generarQR() {
+    this.texto ='qr';
+    console.log('QR generado:', this.texto);
   }
-
 }
