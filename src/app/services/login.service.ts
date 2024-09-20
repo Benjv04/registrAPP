@@ -15,7 +15,7 @@ export class LoginService {
   constructor() {}
 
   validateLogin(username: string, password: string): Usuario | null {
-    console.log('Ejecutando validación en el servicio!');
+    console.log('Ejecutando validacion');
     const found = this.users.find(user => user.username === username);
     if (found !== undefined && found.password === password) {
       console.log('Usuario existente y contraseña correcta');

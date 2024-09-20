@@ -27,7 +27,6 @@ export class LoginPage {
 
     if (user) {
       this.showToastMessage('Login con exito', 'primary');
-
       // redigirir por rol
       if (user.rol === 'profesor') {
         this.router.navigate(['/home'], { state: { username: user.username } });
