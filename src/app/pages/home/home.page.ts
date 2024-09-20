@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { QRCodeModule } from 'angularx-qrcode';
 
 @Component({
@@ -9,12 +10,16 @@ import { QRCodeModule } from 'angularx-qrcode';
 export class HomePage implements OnInit {
   texto: string = ''; 
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
   generarQR() {
     this.texto ='Bienvenido a RegistrAPP';
     console.log('QR generado:', this.texto);
+  }
+
+  cerrarSesion() {
+    this.router.navigate(['/login']); 
   }
 }

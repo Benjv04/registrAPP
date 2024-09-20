@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'home', // Si quieres mantener esta ruta dentro de 'pages/home', puedes hacerlo, pero ya no hace falta la carpeta 'home'
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: 'home-alumnos',
+    loadChildren: () => import('./pages/home-alumnos/home-alumnos.module').then( m => m.HomeAlumnosPageModule)
+  },
 ];
 
 @NgModule({

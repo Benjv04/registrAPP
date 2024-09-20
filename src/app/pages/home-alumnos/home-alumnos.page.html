@@ -17,19 +17,22 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>RegistrAPP</ion-title>
+      <ion-title>Registro de Asistencia</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content [fullscreen]="true">
-    <ion-text color="dark">
-      <h1 class="ion-text-center">Bienvenido</h1>
+  <ion-content class="ion-padding">
+    <ion-text color="primary" *ngIf="mensajeBienvenida">
+      <h2 class="ion-text-center">{{ mensajeBienvenida }}</h2>
     </ion-text>
     
-    <ion-button expand="block" color="dark" (click)="generarQR()">Generar QR</ion-button>
+    <ion-button expand="block" color="primary" (click)="registrarAsistencia()">Registrar Asistencia</ion-button>
     
-    <br><br>
-
-    <qrcode *ngIf="texto" [qrdata]="texto" [width]="400"></qrcode>
+    <div *ngIf="fechaHoraRegistro" class="asisRegist">
+      <ion-text color="dark">
+        <h3>¡Asistencia registrada!</h3>
+        <p>Fecha y Hora: {{fechaHoraRegistro}}</p>
+      </ion-text>
+    </div>
   </ion-content>
 </div>
