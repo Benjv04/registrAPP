@@ -8,9 +8,11 @@
   <ion-img src="assets/img/aula1.avif"></ion-img>
   <div class="login">
     <ion-title class="titulo" size="medium">RegistrApp</ion-title>
-    <ion-input label="Ingrese su usuario" label-placement="floating" fill="inline" placeholder="Usuario"></ion-input>
-    <ion-input label="Ingrese su contraseña" label-placement="floating" fill="inline" placeholder="Contraseña" type="password"></ion-input>
-    <ion-button fill="intline">Ingresar</ion-button>
+
+    <ion-input label="Ingrese su usuario" label-placement="floating" fill="inline" placeholder="Usuario" [(ngModel)]="username"></ion-input>
+
+    <ion-input label="Ingrese su contraseña"label-placement="floating" fill="inline" placeholder="Contraseña" type="password"[(ngModel)]="password"></ion-input>
+    <ion-button fill="intline" (click)="validateLogin()">Ingresar</ion-button>
     <!--INGRESAR LOS RESPECTIVOS ROUTERLINK-->
     <div class="links">
       <ion-text class="registrar">¿No tienes cuenta?, Registrate</ion-text>
