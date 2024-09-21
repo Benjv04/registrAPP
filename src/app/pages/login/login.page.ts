@@ -40,6 +40,10 @@ export class LoginPage {
       } else if (user.rol === 'alumno') {
         this.router.navigate(['/home-alumnos'], { state: { username: user.username } });
       }
+
+      this.username = '';
+      this.password = '';
+
     } else {
       this.showToastMessage('Login erroneo', 'danger');
     }
