@@ -4,6 +4,7 @@
       <h1 class="titulo">Ingresa tu usuario</h1>
       <p class="subtitulo">Para restablecer su contraseña</p>
     </div>
+
     <div class="input-container">
       <ion-item class="input">
         <ion-input [(ngModel)]="email" placeholder="Ingresa tu usuario"></ion-input>
@@ -26,8 +27,9 @@
           {{ showPasswordFields ? 'Restablecer contraseña' : 'Continuar' }}
         </ion-button>
       </div>
-    </div>
-    
-    
+    </div>       
   </div>
+  <!--<div class="volver-login">
+    <button onclick="goToLogin()" expand="full" color="light"></button>
+  </div>--->
 </ion-content>
