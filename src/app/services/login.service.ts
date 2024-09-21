@@ -15,7 +15,7 @@ export class LoginService {
   constructor() {}
 
   validateLogin(username: string, password: string): Usuario | null {
-    console.log('Ejecutando validacion');
+    console.log('Ejecutando validación');
     const found = this.users.find(user => user.username === username);
     if (found !== undefined && found.password === password) {
       console.log('Usuario existente y contraseña correcta');
@@ -25,7 +25,6 @@ export class LoginService {
     return null;
   }
 
-  //funcion para obtener solo los alumnos
   getAlumnos(): Usuario[] {
     return this.users.filter(user => user.rol === 'alumno');
   }
@@ -34,6 +33,30 @@ export class LoginService {
     const alumno = this.users.find(user => user.username === username && user.rol === 'alumno');
     if (alumno) {
       alumno.presente = presente;
+      console.log(`Presencia de ${username} actualizada a ${presente}`);
+    } else {
+      console.log('Alumno no encontrado');
     }
+  }
+
+  userExists(username: string): boolean {
+    return this.users.some(user => user.username === username);
+  }
+
+  changePassword(username: string, newPassword: string): boolean {
+    if (!newPassword) {
+      console.log('La nueva contraseña no puede estar vacía.');
+      return false;
+    }
+
+    const userIndex = this.users.findIndex(user => user.username === username);
+    if (userIndex !== -1) {
+      this.users[userIndex].password = newPassword;
+      console.log('Contraseña cambiada con éxito para:', username);
+      return true;
+    }
+
+    console.log('Usuario no encontrado:', username);
+    return false;
   }
 }
