@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QRCodeModule } from 'angularx-qrcode';
+import { LoginService } from '../../services/login.service';
+import { Usuario } from '../../models/usuario';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +11,13 @@ import { QRCodeModule } from 'angularx-qrcode';
 })
 export class HomePage implements OnInit {
   texto: string = ''; 
+  alumnos:Usuario[]=[];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private loginService: LoginService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.alumnos = this.loginService.getAlumnos();
+  }
 
   generarQR() {
     this.texto ='Bienvenido a RegistrAPP';
@@ -22,4 +27,11 @@ export class HomePage implements OnInit {
   cerrarSesion() {
     this.router.navigate(['/login']); 
   }
+
+  cambiarPresencia(alumno: Usuario) {
+    alumno.presente = !alumno.presente;
+    console.log(`Presencia de ${alumno.name}: ${alumno.presente ? 'Presente' : 'Ausente'}`);
+    this.loginService.actualizarPresencia(alumno.username, alumno.presente); 
+  }
 }
+

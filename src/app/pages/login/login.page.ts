@@ -28,6 +28,13 @@ export class LoginPage {
     if (user) {
       this.showToastMessage('Login con exito', 'primary');
       // redigirir por rol
+
+      if (user.rol === 'alumno') {
+        user.presente = true; // Activar la presencia del alumno
+        console.log(`Presencia de ${user.name}: ${user.presente ? 'Presente' : 'Ausente'}`);
+        this.loginService.actualizarPresencia(user.username, user.presente);
+      }
+      
       if (user.rol === 'profesor') {
         this.router.navigate(['/home'], { state: { username: user.username } });
       } else if (user.rol === 'alumno') {

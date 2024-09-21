@@ -8,8 +8,8 @@ export class LoginService {
   private users: Usuario[] = [
     new Usuario('admin', '12345', 'profesor', 'Admin', 'User'),
     new Usuario('profesor1', '12345', 'profesor', 'Ivan', 'Fernandez'),
-    new Usuario('alumno1', '12345', 'alumno', 'Diego', 'Fuentes'),
-    new Usuario('alumno2', '12345', 'alumno', 'Benjamin', 'Gonzalez'),
+    new Usuario('alumno1', '12345', 'alumno', 'Diego', 'Fuentes', false),
+    new Usuario('alumno2', '12345', 'alumno', 'Benjamin', 'Gonzalez', false)
   ];
 
   constructor() {}
@@ -23,5 +23,17 @@ export class LoginService {
     }
     console.log('Usuario no existe o contraseña incorrecta');
     return null;
+  }
+
+  //funcion para obtener solo los alumnos
+  getAlumnos(): Usuario[] {
+    return this.users.filter(user => user.rol === 'alumno');
+  }
+
+  actualizarPresencia(username: string, presente: boolean) {
+    const alumno = this.users.find(user => user.username === username && user.rol === 'alumno');
+    if (alumno) {
+      alumno.presente = presente;
+    }
   }
 }
