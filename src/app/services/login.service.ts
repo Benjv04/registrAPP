@@ -9,7 +9,9 @@ export class LoginService {
     new Usuario('admin', '12345', 'profesor', 'Admin', 'User'),
     new Usuario('profesor1', '12345', 'profesor', 'Ivan', 'Fernandez'),
     new Usuario('alumno1', '12345', 'alumno', 'Diego', 'Fuentes', false),
-    new Usuario('alumno2', '12345', 'alumno', 'Benjamin', 'Gonzalez', false)
+    new Usuario('alumno2', '12345', 'alumno', 'Benjamin', 'Gonzalez', false),
+    new Usuario('alumno3', '12345', 'alumno', 'alumno', '3', false),
+    new Usuario('alumno4', '12345', 'alumno', 'alumno', '4', false)
   ];
 
   constructor() {}
@@ -29,7 +31,7 @@ export class LoginService {
     return this.users.filter(user => user.rol === 'alumno');
   }
 
-  actualizarPresencia(username: string, presente: boolean) {
+  actualizarAsistencia(username: string, presente: boolean) {
     const alumno = this.users.find(user => user.username === username && user.rol === 'alumno');
     if (alumno) {
       alumno.presente = presente;

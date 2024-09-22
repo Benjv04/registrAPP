@@ -31,7 +31,7 @@ export class HomePage implements OnInit {
   cambiarPresencia(alumno: Usuario) {
     alumno.presente = !alumno.presente;
     console.log(`Presencia de ${alumno.name}: ${alumno.presente ? 'Presente' : 'Ausente'}`);
-    this.loginService.actualizarPresencia(alumno.username, alumno.presente); 
+    this.loginService.actualizarAsistencia(alumno.username, alumno.presente); 
   }
 }
 

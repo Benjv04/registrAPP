@@ -30,9 +30,9 @@ export class LoginPage {
       // redigirir por rol
 
       if (user.rol === 'alumno') {
-        user.presente = true; // Activar la presencia del alumno
+        user.presente = true; 
         console.log(`Presencia de ${user.name}: ${user.presente ? 'Presente' : 'Ausente'}`);
-        this.loginService.actualizarPresencia(user.username, user.presente);
+        this.loginService.actualizarAsistencia(user.username, user.presente);
       }
       
       if (user.rol === 'profesor') {
