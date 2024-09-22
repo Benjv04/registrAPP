@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./reset-pass.page.scss'],
 })
 export class ResetPassPage {
-  showPasswordFields: boolean = false;
+  mostrarcontrasena: boolean = false;
   email: string = '';
   password: string = '';
-  confirmPassword: string = '';
+  confirmarcontrasena: string = '';
 
   constructor(
     private loginService: LoginService,
@@ -20,10 +20,10 @@ export class ResetPassPage {
     private router: Router
   ) {}
 
-  togglePasswordFields() {
+  verificacion() {
     console.log('Verificando usuario:', this.email);
     if (this.loginService.userExists(this.email)) {
-      this.showPasswordFields = true;
+      this.mostrarcontrasena = true;
       this.presentToast('Usuario encontrado. Por favor, ingrese su nueva contraseña.','success');
     } else {
       this.presentToast('Usuario no encontrado. Verifique el nombre de usuario.','danger');
@@ -31,12 +31,12 @@ export class ResetPassPage {
   }
 
   onSubmit() {
-    if (this.password !== this.confirmPassword) {
+    if (this.password !== this.confirmarcontrasena) {
       this.presentToast('Las contraseñas no coinciden','danger');
       return;
     }
 
-    if (this.loginService.changePassword(this.email, this.password)) {
+    if (this.loginService.cambiarcontraseña(this.email, this.password)) {
       this.presentToast('Contraseña cambiada con éxito','success');
       this.router.navigate(['/login']);
     } else {

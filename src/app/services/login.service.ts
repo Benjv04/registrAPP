@@ -45,7 +45,7 @@ export class LoginService {
     return this.users.some(user => user.username === username);
   }
 
-  changePassword(username: string, newPassword: string): boolean {
+  cambiarcontraseña(username: string, newPassword: string): boolean {
     if (!newPassword) {
       console.log('La nueva contraseña no puede estar vacia.');
       return false;
