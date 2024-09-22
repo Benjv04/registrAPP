@@ -47,14 +47,14 @@ export class LoginService {
 
   changePassword(username: string, newPassword: string): boolean {
     if (!newPassword) {
-      console.log('La nueva contraseña no puede estar vacía.');
+      console.log('La nueva contraseña no puede estar vacia.');
       return false;
     }
 
     const userIndex = this.users.findIndex(user => user.username === username);
     if (userIndex !== -1) {
       this.users[userIndex].password = newPassword;
-      console.log('Contraseña cambiada con éxito para:', username);
+      console.log('Contraseña cambiada con exito para:', username);
       return true;
     }
 
