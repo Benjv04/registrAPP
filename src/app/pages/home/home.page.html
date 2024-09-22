@@ -43,7 +43,11 @@
         <ion-item *ngFor="let alumno of alumnos">
           <ion-label>
             {{ alumno.name }} {{ alumno.lastname }}
-            <p>Estado: {{ alumno.presente ? 'Presente' : 'Ausente' }}</p>
+            <p>Estado: 
+              <span [ngClass]="alumno.presente ? 'presente' : 'ausente'">
+                {{ alumno.presente ? 'Presente' : 'Ausente' }}
+              </span>
+            </p>
           </ion-label>
         </ion-item>
       </ion-list>
