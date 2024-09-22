@@ -53,4 +53,8 @@ export class ResetPassPage {
     });
     toast.present();
   }
+/*
+  goToLogin (){
+    this.router.navigate(['/login']);
+  } */
 }
