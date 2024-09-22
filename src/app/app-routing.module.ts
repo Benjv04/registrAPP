@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/reset-pass/reset-pass.module').then( m => m.ResetPassPageModule)
   },
   {
-    path: 'home', // Si quieres mantener esta ruta dentro de 'pages/home', puedes hacerlo, pero ya no hace falta la carpeta 'home'
+    path: 'home', 
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
