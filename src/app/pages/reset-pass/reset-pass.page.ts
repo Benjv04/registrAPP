@@ -53,8 +53,8 @@ export class ResetPassPage {
     });
     toast.present();
   }
-/*
-  goToLogin (){
+
+  /*goToLogin() {
     this.router.navigate(['/login']);
-  } */
+  }    NO ME SALIO EL ROUTER EN EL PAGE RECUERDENME PREGUNTARLE AL PROFE*/
 }
